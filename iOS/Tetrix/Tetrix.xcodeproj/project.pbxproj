@@ -14,7 +14,6 @@
 		98435F6D1B5DE0F50028E755 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98435F6C1B5DE0F50028E755 /* Images.xcassets */; };
 		98435F701B5DE0F50028E755 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98435F6E1B5DE0F50028E755 /* LaunchScreen.xib */; };
 		98435F7C1B5DE0F50028E755 /* TetrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98435F7B1B5DE0F50028E755 /* TetrixTests.swift */; };
-		98435F8D1B5DE4D90028E755 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 98435F8B1B5DE4D90028E755 /* Sounds */; };
 		98435F8E1B5DE4D90028E755 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 98435F8C1B5DE4D90028E755 /* Sprites.atlas */; };
 		98435F901B5DE50E0028E755 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98435F8F1B5DE50E0028E755 /* Array2D.swift */; };
 		98435F921B5DE5AF0028E755 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98435F911B5DE5AF0028E755 /* Block.swift */; };
@@ -27,6 +26,7 @@
 		98435FA11B5DE8600028E755 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98435FA01B5DE8600028E755 /* SShape.swift */; };
 		98435FA31B5DE9BE0028E755 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98435FA21B5DE9BE0028E755 /* ZShape.swift */; };
 		98435FA51B5DF89C0028E755 /* Tetrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98435FA41B5DF89C0028E755 /* Tetrix.swift */; };
+		98435FA81B5E25D10028E755 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 98435F8B1B5DE4D90028E755 /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +108,6 @@
 				98435F991B5DE76E0028E755 /* Shapes */,
 				98435F611B5DE0F40028E755 /* AppDelegate.swift */,
 				98435F8F1B5DE50E0028E755 /* Array2D.swift */,
-				98435F911B5DE5AF0028E755 /* Block.swift */,
 				98435F651B5DE0F40028E755 /* GameScene.swift */,
 				98435F671B5DE0F40028E755 /* GameViewController.swift */,
 				98435FA41B5DF89C0028E755 /* Tetrix.swift */,
@@ -150,6 +149,7 @@
 		98435F991B5DE76E0028E755 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
+				98435F911B5DE5AF0028E755 /* Block.swift */,
 				98435F931B5DE60D0028E755 /* Shape.swift */,
 				98435F9E1B5DE82D0028E755 /* JShape.swift */,
 				98435F9C1B5DE7A00028E755 /* LShape.swift */,
@@ -242,9 +242,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98435FA81B5E25D10028E755 /* Sounds in Resources */,
 				98435F701B5DE0F50028E755 /* LaunchScreen.xib in Resources */,
 				98435F6D1B5DE0F50028E755 /* Images.xcassets in Resources */,
-				98435F8D1B5DE4D90028E755 /* Sounds in Resources */,
 				98435F6B1B5DE0F40028E755 /* Main.storyboard in Resources */,
 				98435F8E1B5DE4D90028E755 /* Sprites.atlas in Resources */,
 			);

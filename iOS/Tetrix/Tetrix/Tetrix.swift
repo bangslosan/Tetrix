@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 leocardz. All rights reserved.
 //
 
+import Foundation
+
 var NumColumns = 12
 var NumRows = 32
 
@@ -39,23 +41,31 @@ protocol TetrixDelegate {
 }
 
 class Tetrix {
+    
+    var storedIntDataPath: String?
+    let filemgr = NSFileManager.defaultManager()
+    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+    
     var blockArray:Array2D<Block>
     var nextShape:Shape?
     var fallingShape:Shape?
     var delegate:TetrixDelegate?
     
     var score:Int
+    var record: Int
     var level:Int
     
     init() {
         score = 0
         level = 1
+        record = 0
         fallingShape = nil
         nextShape = nil
         blockArray = Array2D<Block>(columns: NumColumns, rows: NumRows)
     }
     
     func beginGame() {
+        retrieveSavedData()
         if (nextShape == nil) {
             nextShape = Shape.random(PreviewColumn, startingRow: PreviewRow)
         }
@@ -246,6 +256,28 @@ class Tetrix {
             allBlocks.append(rowOfBlocks)
         }
         return allBlocks
+    }
+    
+    func saveData() {
+        let details = [self.record]
+        NSKeyedArchiver.archiveRootObject(details, toFile: storedIntDataPath!)
+    }
+    
+    func retrieveSavedData() {
+        
+        let docsDir = dirPaths[0] as! String
+        storedIntDataPath = docsDir.stringByAppendingPathComponent("data.archive")
+        
+        if filemgr.fileExistsAtPath(storedIntDataPath!) {
+            let dataArray = NSKeyedUnarchiver.unarchiveObjectWithFile(storedIntDataPath!) as! [Int]
+            
+            if(dataArray.count > 0){
+                self.record = dataArray[0]
+            } else {
+                saveData()
+            }
+        }
+        
     }
     
 }

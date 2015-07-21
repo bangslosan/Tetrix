@@ -44,11 +44,11 @@ class GameScene: SKScene {
         shapeLayer.addChild(gameBoard)
         gameLayer.addChild(shapeLayer)
         
-        runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("theme.mp3", waitForCompletion: true)))
+//        runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("theme.mp3", waitForCompletion: false)))
     }
     
     func playSound(sound:String) {
-        runAction(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
+//        runAction(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -179,5 +179,6 @@ class GameScene: SKScene {
         
         runAction(SKAction.waitForDuration(longestDuration), completion:completion)
     }
+
     
 }

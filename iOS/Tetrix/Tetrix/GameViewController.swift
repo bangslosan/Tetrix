@@ -128,6 +128,8 @@ class GameViewController: UIViewController, TetrixDelegate, UIGestureRecognizerD
         
         levelLabel.text = "\(tetrix.level)"
         scoreLabel.text = "\(tetrix.score)"
+        recordLabel.text = "\(tetrix.record)"
+        
         scene.tickLengthMillis = TickLengthLevelOne
         
         // The following is false when restarting a new game
@@ -175,6 +177,13 @@ class GameViewController: UIViewController, TetrixDelegate, UIGestureRecognizerD
         let removedLines = tetrix.removeCompletedLines()
         if removedLines.linesRemoved.count > 0 {
             self.scoreLabel.text = "\(tetrix.score)"
+            
+            if(tetrix.score > tetrix.record) {
+                tetrix.record = tetrix.score
+                recordLabel.text = "\(tetrix.record)"
+                tetrix.saveData()
+            }
+            
             scene.animateCollapsingLines(removedLines.linesRemoved, fallenBlocks:removedLines.fallenBlocks) {
                 
                 self.gameShapeDidLand(tetrix)
